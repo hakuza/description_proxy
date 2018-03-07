@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style.css">
+  <title>Hakuza</title>
+</head>
+
+<body>
+  <div id="description"></div>
+  <div id="expanded"></div>
+
+  <script src="/lib/react.development.js"></script>
+  <script src="/lib/react-dom.development.js"></script>
+  <script src="http://localhost:3001/app.js"></script>
+  <script src="http://localhost:3005/app.js"></script>
+
+  <!-- see: https://reactjs.org/docs/react-without-jsx.html -->
+  <script>
+    // ReactDOM.render(
+    //   React.createElement(Description),
+    //   document.getElementById('description')
+    // );
+    ReactDOM.render(
+      React.createElement(Expanded),
+      document.getElementById('expanded')
+    );
+  </script>
+</body>
+
+</html>

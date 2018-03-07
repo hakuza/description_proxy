@@ -1,0 +1,41 @@
+body {
+  min-width: 768px;
+}
+
+.streamer_text {
+  color: #fff;
+}
+
+.star {
+  color: #f4c150;
+}
+
+.row_items {
+  padding-right: 10px;
+}
+
+#streamer {
+  background: #29303b;
+}
+
+#container {
+  padding-left: 20%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  flex-direction: column;
+  width: 66.66666667%;
+}
+
+#container_feedback {
+  display: flex;
+  flex-direction: row;
+}
+
+#by_line {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.row_span {
+  padding-right: 5px;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import {Feedback} from "./feedback.jsx";
+import {Feedbacks} from "./feedback.jsx";
 import {Featured} from "./featured_review.jsx";
 import "./styles.css";
 
@@ -46,7 +46,7 @@ export class Feedback extends React.Component {
     return (
       <div>
         <Featured reviews={this.state.reviews} id={this.state.id}/>
-        <Feedback reviews={this.state.reviews} id={this.state.id}/>
+        <Feedbacks reviews={this.state.reviews} id={this.state.id}/>
       </div>
     );
   }

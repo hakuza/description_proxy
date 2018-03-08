@@ -14,12 +14,20 @@ services:
       - 'database'
     ports:
       - '3005:3005'
+  
+  feedback:
+    build: feedback/
+    depends_on:
+      - 'database'
+    ports:
+      - '3002:3002'
 
   proxy:
     build: proxy/
     depends_on:
       - 'description'
       - 'expanded'
+      - 'feedback'
     ports:
       - '3000:3000'
 

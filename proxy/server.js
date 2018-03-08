@@ -11,9 +11,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/load', (req, res) => {
   request('http://expanded:3005/load').pipe(res);
 });
+
 app.get('/description', (req, res) => {
   request('http://description:3001/description').pipe(res);
 });
+
+app.get('/feedback', (req, res) => {
+  request('http://feedback:3002/feedback').pipe(res);
+});
+
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`)
 });

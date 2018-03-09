@@ -20,6 +20,10 @@ app.get('/feedback', (req, res) => {
   request('http://feedback:3002/feedback').pipe(res);
 });
 
+app.get('/courses', (req, res) => {
+  request('http://payment:3003/courses').pipe(res);
+});
+
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`)
 });

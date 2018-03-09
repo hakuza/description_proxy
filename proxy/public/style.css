@@ -1,0 +1,16 @@
+#payment {
+  position: sticky;
+  top: 10px;
+}
+
+#left {
+  float: left;
+  width: 100%;
+}
+
+#right {
+  position: absolute;
+  z-index: 1;
+  top: 120px;
+  right: 180px;
+}

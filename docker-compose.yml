@@ -22,12 +22,20 @@ services:
     ports:
       - '3002:3002'
 
+  payment:
+    build: payment/
+    depends_on:
+      - 'database'
+    ports:
+      - '3003:3003'
+
   proxy:
     build: proxy/
     depends_on:
       - 'description'
       - 'expanded'
       - 'feedback'
+      - 'payment'
     ports:
       - '3000:3000'
 

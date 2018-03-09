@@ -2,40 +2,46 @@ version: '3'
 
 services:
   description:
-    build: description/
+    image: camnix/description
     depends_on:
       - 'database'
     ports: 
       - '3001:3001'
 
   expanded:
-    build: expanded_description/
+    image: camnix/expanded_description
     depends_on:
       - 'database'
     ports:
       - '3005:3005'
   
   feedback:
-    build: feedback/
+    image: uhan19/feedback_feedback
     depends_on:
       - 'database'
     ports:
       - '3002:3002'
 
   payment:
-    build: payment/
+    image: bmblumenfeld/payment
     depends_on:
       - 'database'
     ports:
       - '3003:3003'
+  
+  compare:
+    image: jsonbao/compare
+    ports:
+      - '3004:3004'
 
   proxy:
-    build: proxy/
+    image: camnix/proxy
     depends_on:
       - 'description'
       - 'expanded'
       - 'feedback'
       - 'payment'
+      - 'compare'
     ports:
       - '3000:3000'
 

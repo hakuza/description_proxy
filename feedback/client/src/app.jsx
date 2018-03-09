@@ -40,13 +40,18 @@ export class Feedback extends React.Component {
   }
 
   render() {
+    let view;
     if (this.state.reviews === null) {
-      return <h1>Loading...</h1>;
+      view = <h1>Loading...</h1>;
+    } else {
+      view = <div>
+        <Featured reviews={this.state.reviews} id={this.state.id}/>
+        <Feedbacks reviews={this.state.reviews} id={this.state.id}/>
+      </div>
     }
     return (
       <div>
-        <Featured reviews={this.state.reviews} id={this.state.id}/>
-        <Feedbacks reviews={this.state.reviews} id={this.state.id}/>
+        {view}
       </div>
     );
   }

@@ -1,2 +1,0 @@
-# hakuza
-Udemy clone

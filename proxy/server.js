@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const path = require('path');
 const request = require('request');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -17,11 +17,15 @@ app.get('/description', (req, res) => {
 });
 
 app.get('/feedback', (req, res) => {
-  request('http://feedback:3002/feedback').pipe(res);
+  request('http://feedback:3002/feedback', {qs: req.query}).pipe(res);
 });
 
 app.get('/courses', (req, res) => {
   request('http://payment:3003/courses').pipe(res);
+});
+
+app.get('/compare', (req, res) => {
+  request('http://compare:3004/compare', {qs: req.query}).pipe(res);
 });
 
 app.listen(port, () => {

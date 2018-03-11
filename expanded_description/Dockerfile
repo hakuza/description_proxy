@@ -8,7 +8,7 @@ COPY package.json /usr/src/app
 
 RUN npm install
 
-COPY . /usr/src/app
+COPY public/ /usr/src/app
 
 EXPOSE 3005
 
